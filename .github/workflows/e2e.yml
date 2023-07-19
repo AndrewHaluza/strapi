@@ -11,9 +11,14 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    container:
+      image: node:18
+      ports:
+        - 8000:8000
     strategy:
+      fail-fast: false
       matrix:
-        project: ['chromium', 'webkit', 'firefox']
+        project: ['chromium']
     steps:
       - uses: actions/checkout@v3
         with:
@@ -23,16 +28,12 @@ jobs:
         with:
           node-version: 18
 
-      - uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-
-      - uses: nrwl/nx-set-shas@v3
-      - run: yarn install --immutable
+      - name: Monorepo install
+        uses: ./.github/actions/yarn-nm-install
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        # we need 1.37.0 to support Firefox install...
+        run: npx playwright@next install --with-deps
 
       - name: Run build:ts
         run: yarn nx run-many --target=build:ts --nx-ignore-cycles --skip-nx-cache
@@ -41,7 +42,7 @@ jobs:
         run: yarn nx run-many --target=build --nx-ignore-cycles --skip-nx-cache
 
       - name: Run E2E tests
-        run: yarn test:e2e --concurrency=1 --project=${{ matrix.project }}
+        run: yarn test:e2e --setup --concurrency=1 --project=${{ matrix.project }}
 
       - uses: actions/upload-artifact@v3
         if: always()

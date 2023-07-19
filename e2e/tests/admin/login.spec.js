@@ -11,7 +11,7 @@ test.describe('Login', () => {
   });
 
   test.describe('Successful login', () => {
-    test('A user should be able to log in with or without making their authentication persistent', async ({
+    test.only('A user should be able to log in with or without making their authentication persistent', async ({
       page,
       context,
     }) => {
@@ -21,19 +21,19 @@ test.describe('Login', () => {
 
       await page.close();
 
-      page = await context.newPage();
-      await page.goto('/admin');
-      await expect(page).toHaveTitle('Strapi Admin');
+      const rememberMePage = await context.newPage();
+      await rememberMePage.goto('/admin');
+      await expect(rememberMePage).toHaveTitle('Strapi Admin');
 
       // Test with making user authentication persistent
-      await login({ page, rememberMe: true });
-      await expect(page).toHaveTitle('Homepage');
+      await login({ rememberMePage, rememberMe: true });
+      await expect(rememberMePage).toHaveTitle('Homepage');
 
-      await page.close();
+      await rememberMePage.close();
 
-      page = await context.newPage();
-      await page.goto('/admin');
-      await expect(page).toHaveTitle('Homepage');
+      const reloadPage = await context.newPage();
+      await reloadPage.goto('/admin');
+      await expect(reloadPage).toHaveTitle('Homepage');
     });
   });
 

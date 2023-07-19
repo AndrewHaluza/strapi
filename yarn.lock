@@ -4780,19 +4780,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:1.36.1":
-  version: 1.36.1
-  resolution: "@playwright/test@npm:1.36.1"
+"@playwright/test@npm:next":
+  version: 1.37.0-alpha-jul-19-2023
+  resolution: "@playwright/test@npm:1.37.0-alpha-jul-19-2023"
   dependencies:
     "@types/node": "*"
     fsevents: 2.3.2
-    playwright-core: 1.36.1
+    playwright-core: 1.37.0-alpha-jul-19-2023
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     playwright: cli.js
-  checksum: a0127e0dccc458e7feb1b5742c90f79db0b895288b135310d056be5e3c6bb2c47c4503d5b7a584db2b1ef518f87020dafa0016c198c98fd3df719d66cd2ab7b7
+  checksum: 2fd19a74de3694615f0dddc1082e6ab8b8071d463f49945150ad90e6411fec82059b5261e840e0d8b9115cfb7cd98626b814186635a2131e7e1f6cbf4a88a48d
   languageName: node
   linkType: hard
 
@@ -26716,12 +26716,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.36.1":
-  version: 1.36.1
-  resolution: "playwright-core@npm:1.36.1"
+"playwright-core@npm:1.37.0-alpha-jul-19-2023":
+  version: 1.37.0-alpha-jul-19-2023
+  resolution: "playwright-core@npm:1.37.0-alpha-jul-19-2023"
   bin:
     playwright-core: cli.js
-  checksum: bbde807294053b50f0dbbc81f0dacc43fe525830ce1526e6ca74012582dd1645eae2391719cfb020051abea90704057cfabcbfe45ca530b37becc491e9459790
+  checksum: eec78fdbfa0c8aa9e1f1220400fc496bb21b7778667a6982935ba7f3971653e09eb6282dc7bd944dc2cef21ed8da34a639edb6dd1fa1532ee96ee622a51c288f
   languageName: node
   linkType: hard
 
@@ -30226,7 +30226,7 @@ __metadata:
     "@babel/core": ^7.20.12
     "@babel/eslint-parser": ^7.19.1
     "@babel/preset-react": 7.18.6
-    "@playwright/test": 1.36.1
+    "@playwright/test": next
     "@strapi/admin-test-utils": "workspace:*"
     "@strapi/eslint-config": 0.1.2
     "@swc/cli": 0.1.62
