@@ -97,7 +97,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::tag.tag",
-      "private": true,
+      "private": false,
       "inversedBy": "one_to_one_kitchensink"
     },
     "one_to_many_tags": {

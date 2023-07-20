@@ -1,6 +1,6 @@
 {
   "name": "kitchensink",
-  "private": true,
+  "private": false,
   "version": "4.4.1",
   "description": "A Strapi application.",
   "scripts": {
