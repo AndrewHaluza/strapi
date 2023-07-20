@@ -1,6 +1,7 @@
 {
-  "name": "@strapi/plugin-sentry",
-  "version": "4.4.1",
+  "name": "@nd1/strapi-plugin-sentry",
+  "version": "4.4.1a",
+  "private": false,
   "description": "Send Strapi error events to Sentry",
   "repository": {
     "type": "git",
@@ -15,9 +16,9 @@
   },
   "maintainers": [
     {
-      "name": "Strapi Solutions SAS",
-      "email": "hi@strapi.io",
-      "url": "https://strapi.io"
+      "name": "ND",
+      "email": "nd@newerest.space",
+      "url": "https://"
     }
   ],
   "scripts": {
